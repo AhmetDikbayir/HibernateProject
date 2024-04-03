@@ -12,7 +12,7 @@ public class StudentService {
 
     Scanner scan = new Scanner(System.in);
 
-    public Student createStudent() throws SQLException {
+    public void createStudent() throws SQLException {
         System.out.println("Please enter student id: ");
         int studentId = scan.nextInt();
         scan.nextLine();
@@ -23,7 +23,6 @@ public class StudentService {
         System.out.println("Please enter student email:");
         String stdEmail = scan.next();
         ArrayList<String> courses = new ArrayList<>();
-        Student std1 = new Student(studentId,stdName,stdSurname,stdEmail, courses);
 
         String stdCreate = "INSERT INTO students VALUES(?,?,?,?)";
         PreparedStatement prst = con.prepareStatement(stdCreate);
@@ -33,8 +32,10 @@ public class StudentService {
         prst.setString(4,stdEmail);
         prst.executeUpdate();
 
-        return std1;
     }
+
+    //FİRST ASSİGNMENT METOT OLARAK DEĞİŞTİR
+    //DİĞER YAZILILAR İÇİN METOTLAR OLUŞTUR
 
     public void setNote() throws SQLException {
         System.out.println("Please enter student id: ");
@@ -46,7 +47,7 @@ public class StudentService {
         System.out.println("Please enter students note:");
         int stdNote = scan.nextInt();
         scan.nextLine();
-        String setStudentNote = "UPDATE students SET note = ?, courseid = ? WHERE id = ?";
+        String setStudentNote = "UPDATE students SET firstassignmentnote = ?, courseid = ? WHERE id = ?";
         PreparedStatement prst = con.prepareStatement(setStudentNote);
         prst.setInt(1,stdNote);
         prst.setInt(2, stdCourse);
@@ -65,8 +66,11 @@ public class StudentService {
                 "FROM teachers t \n" +
                 "JOIN students s\n" +
                 "ON t.courseId = s.courseId\n" +
-                "WHERE s.name = '${stdName}' AND s.courseid = t.courseId";
-        ResultSet rs = st.executeQuery(findTeacherSQL);
+                "WHERE s.name = ? AND ? = t.courseId";
+        PreparedStatement prst = con.prepareStatement(findTeacherSQL);
+        prst.setString(1, stdName);
+        prst.setInt(2, courseID);
+        ResultSet rs = prst.executeQuery();
         while(rs.next()){
             System.out.println("Student Name : " + rs.getString("sName") + " Teacher name : " + rs.getString("tName"));
         }
@@ -81,7 +85,6 @@ public class StudentService {
             System.out.println("Student name : " + rs.getString("name"));
             System.out.println("Student surname : " + rs.getString("surname"));
         }
-
-
     }
+
 }

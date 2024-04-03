@@ -11,7 +11,7 @@ public class TeacherService {
 
     Scanner scan = new Scanner(System.in);
 
-    public Teacher addTeacher() throws SQLException {
+    public void addTeacher() throws SQLException {
 
         System.out.println("Please enter teacher id :");
         int id = scan.nextInt();
@@ -27,7 +27,6 @@ public class TeacherService {
         System.out.println("Please enter teacher courseId :");
         int courseId = scan.nextInt();
         scan.nextLine();
-        Teacher tch1 = new Teacher(id, tchName,tchSurname,tchEmail, tchCourse,courseId);
 
         String createTeacher = "INSERT INTO teachers VALUES(?,?,?,?,?,?);";
         PreparedStatement prst = con.prepareStatement(createTeacher);
@@ -38,7 +37,7 @@ public class TeacherService {
         prst.setString(5, tchCourse);
         prst.setInt(6,courseId);
         prst.executeUpdate();
-        return tch1;
+
     }
 
     public void listTeacher() throws SQLException {
@@ -55,4 +54,5 @@ public class TeacherService {
             System.out.println("--------------------------------");
         }
     }
+
 }

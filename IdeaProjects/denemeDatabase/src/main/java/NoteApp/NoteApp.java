@@ -28,7 +28,10 @@ public class NoteApp {
                 "name VARCHAR(20)," +
                 "surname VARCHAR(20)," +
                 "email VARCHAR(50)," +
-                "note REAL," +
+                "firstAssignmentNote REAL," +
+                "secondAssignmentNote REAL," +
+                "thirdAssignmentNote REAL," +
+                "GPA REAL," +
                 "courseId INTEGER," +
                 "FOREIGN KEY(courseId) REFERENCES teachers(courseId));";
         st.execute(createStudentTable);
