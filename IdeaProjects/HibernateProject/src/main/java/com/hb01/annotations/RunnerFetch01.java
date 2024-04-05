@@ -64,8 +64,6 @@ public class RunnerFetch01 {
         System.out.println(uniqueresult2.getName());
 
 
-
-
         tx.commit();
         session.close();
         sf.close();
