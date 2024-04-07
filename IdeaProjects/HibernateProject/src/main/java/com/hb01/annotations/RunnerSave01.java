@@ -45,7 +45,7 @@ public class RunnerSave01 {
         //INSERT INTO t_student01 (id, student_name, grade) VALUES(?,?,?);
 
         tx.commit(); //!!! commit önemli, yazılmazsa DB ye kaydedilme garantisi yok...
-        session.clear();
+        session.close();
         sf.close();
 
 
