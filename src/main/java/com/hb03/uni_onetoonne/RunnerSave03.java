@@ -37,6 +37,11 @@ public class RunnerSave03 {
         diary2.setName("Fatma's diary");
         diary2.setStudent(student2);
 
+        Diary diary3 = new Diary();
+        diary3.setId(103);
+        diary3.setName("Ayse's diary");
+
+
         Configuration con = new Configuration().
                 configure("hibernate.cfg.xml").
                 addAnnotatedClass(Student03.class).
@@ -52,6 +57,7 @@ public class RunnerSave03 {
 
         session.save(diary1);
         session.save(diary2);
+        session.save(diary3);
 
 
         tx.commit();
