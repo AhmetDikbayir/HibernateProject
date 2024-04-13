@@ -30,6 +30,7 @@ public class RunnerFetch03 {
 
         Diary diary2 = session.createQuery(hqlQuery, Diary.class).uniqueResult();
         System.out.println(diary2);
+        session.delete(diary2);
 
 
         tx.commit();
