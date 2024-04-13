@@ -20,6 +20,15 @@ public class Diary {
     // ( olusacak kolonun Default değeri : student_id )
     private Student03 student;  //student_id
 
+    public Diary() {
+    }
+
+    public Diary(int id, String name, Student03 student) {
+        this.id = id;
+        this.name = name;
+        this.student = student;
+    }
+
     // Not: Getter - Setter **********************************
 
 
