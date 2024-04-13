@@ -20,8 +20,8 @@ public class RunnerFetch03 {
 
         Student03 std = session.get(Student03.class, 1001);
         Diary diary = session.get(Diary.class, 101);
-//        System.out.println(std);
-//        System.out.println(diary.getStudent().getName());
+        System.out.println(std);
+        System.out.println(diary.getStudent().getName());
 
         String hqlQuery = "FROM Diary WHERE id = 102";
         List<Diary> results = session.createQuery(hqlQuery, Diary.class).getResultList();
@@ -29,7 +29,7 @@ public class RunnerFetch03 {
 
 
         Diary diary2 = session.createQuery(hqlQuery, Diary.class).uniqueResult();
-        System.out.println(diary2);
+        //System.out.println(diary2);
         session.delete(diary2);
 
 
@@ -38,4 +38,6 @@ public class RunnerFetch03 {
         sf.close();
 
     }
+
+
 }
