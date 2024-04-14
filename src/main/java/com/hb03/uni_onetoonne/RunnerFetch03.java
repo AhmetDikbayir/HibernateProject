@@ -1,11 +1,17 @@
 package com.hb03.uni_onetoonne;
 
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class RunnerFetch03 {
@@ -23,14 +29,30 @@ public class RunnerFetch03 {
         System.out.println(std);
         System.out.println(diary.getStudent().getName());
 
+
+
         String hqlQuery = "FROM Diary WHERE id = 102";
         List<Diary> results = session.createQuery(hqlQuery, Diary.class).getResultList();
 //        System.out.println(results);
 
-
+        //**************** Delete method used *******************
         Diary diary2 = session.createQuery(hqlQuery, Diary.class).uniqueResult();
         //System.out.println(diary2);
-        session.delete(diary2);
+        //session.delete(diary2);
+
+
+
+        //***************** Create criteria used ****************************
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Diary> criteria = builder.createQuery(Diary.class);
+        Root<Diary> root = criteria.from(Diary.class);
+        criteria.select(root).where(builder.equal(root.get("name"), "Ahmet's diary"));
+
+        Query<Diary> query = session.createQuery(criteria);
+        List<Diary> diaryList = query.getResultList();
+        for(Diary d : diaryList){
+            System.out.println(d);
+        }
 
 
         tx.commit();
