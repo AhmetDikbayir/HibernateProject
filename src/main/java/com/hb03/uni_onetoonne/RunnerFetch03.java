@@ -6,7 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -27,6 +26,7 @@ public class RunnerFetch03 {
         Student03 std = session.get(Student03.class, 1001);
         Diary diary = session.get(Diary.class, 101);
         System.out.println(std);
+        System.out.println(diary);
         System.out.println(diary.getStudent().getName());
 
 
