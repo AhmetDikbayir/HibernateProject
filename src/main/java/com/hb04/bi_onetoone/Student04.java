@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 public class Student04 {
 
     @Id
-    private int id;
+    private Integer id;
 
     @Column(name = "std_name")
     private String name;

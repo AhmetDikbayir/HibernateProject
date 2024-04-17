@@ -5,6 +5,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
 public class RunnerFetch04 {
     public static void main(String[] args) {
         Configuration con=new Configuration().configure("hibernate.cfg.xml").
@@ -37,8 +41,20 @@ public class RunnerFetch04 {
         });*/
 
         //!!! TASK : bütün öğrenciler ve varsa bu ogrencilerin gunlukleri de getirelim ( ogrenci ismi ve gunluk ismi ekrana basilsin)
-        String hqlQuery2 = "";
+        String hqlQuery2 = "SELECT s.name,d.name from Student04 s LEFT JOIN FETCH Diary04 d ON s.id=d.student";
+        List<Object[]> resultList2 = session.createQuery(hqlQuery2).getResultList();
 
+        resultList2.forEach(oa->{ // lambda expression
+            System.out.println(Arrays.toString(oa));
+        });
+
+        //!!! TASK : butun ogrenci ve diary bilgilerini getiriyoruz
+        String hqlQuery3 ="SELECT s.name,d.name FROM Student04 s FULL JOIN FETCH Diary04 d ON s.id=d.student";
+        List<Object[]> resultList3 = session.createQuery(hqlQuery3).getResultList();
+
+        resultList3.forEach(oa->{ // lambda expression
+            System.out.println(Arrays.toString(oa));
+        });
 
         tx.commit();
         session.close();

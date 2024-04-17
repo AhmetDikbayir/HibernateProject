@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 public class Diary04 {
 
     @Id
-    private int id;
+    private Integer id;
     private String name;
 
     @OneToOne

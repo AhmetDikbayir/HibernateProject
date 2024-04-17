@@ -1,22 +1,19 @@
-package com.hb03.uni_onetoonne;
+package com.hb05.manytoone;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Student03 {
+public class University {
+
     @Id
     private Integer id;
 
-    @Column(name = "std_name")
+    @Column(nullable = false, unique = true)
     private String name;
 
-    private int grade;
-
-    // !!! Not : Getter - Setter *******************
-
-
+    // Getter - Setter **********************
     public int getId() {
         return id;
     }
@@ -33,23 +30,14 @@ public class Student03 {
         this.name = name;
     }
 
-    public int getGrade() {
-        return grade;
-    }
-
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
-
-    // !!! Not : toString()  *********************
+    // toString ***********************
 
 
     @Override
     public String toString() {
-        return "Student03{" +
+        return "University{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", grade=" + grade +
                 '}';
     }
 }

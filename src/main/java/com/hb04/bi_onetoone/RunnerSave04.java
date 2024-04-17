@@ -58,11 +58,6 @@ public class RunnerSave04 {
         session.save(diary1);
         session.save(diary2);
 
-
-
-
-
-
         tx.commit();
         session.close();
         sf.close();
