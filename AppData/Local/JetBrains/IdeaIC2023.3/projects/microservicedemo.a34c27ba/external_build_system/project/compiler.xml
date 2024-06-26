@@ -1,0 +1,12 @@
+<project>
+  <component name="ExternalCompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="car-service" target="17" />
+      <module name="config" target="17" />
+      <module name="core" target="17" />
+      <module name="discovery" target="17" />
+      <module name="gateway" target="17" />
+      <module name="log-service" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,19 @@
+version: '3.8' # Versiyonu belirtiliyor, ihtiyaçlarınıza göre değiştirebilirsiniz
+
+services:
+  dev-db:
+    image: postgres:16 # PostgreSQL'in en son sürümünü kullanır
+    container_name: postgres_container # Konteyner adı
+    restart: always # Her zaman yeniden başlat
+    environment:
+      POSTGRES_USER: db_user # PostgreSQL kullanıcı adı
+      POSTGRES_PASSWORD: db_password # PostgreSQL şifre
+      POSTGRES_DB: nest # Oluşturulacak veritabanı adı
+    ports:
+      - "5432:5432" # Host ve konteyner arasında bağlantı noktası eşleştirmesi
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Veri kalıcılığı için hacim tanımlaması
+
+volumes:
+  postgres_data:
+    driver: local # Yerel sürücü kullanılır
