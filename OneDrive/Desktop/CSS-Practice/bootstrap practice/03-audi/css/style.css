@@ -1,0 +1,27 @@
+/* COMMON */
+
+:root{
+    --color1: rgb(239, 239, 239);
+    --color2: rgb(35, 35, 35);
+}
+
+@font-face {
+    font-family: "Audi-ExtNormal";
+    src: url("../fonts/AudiType-ExtendedNormal.woff2");
+}
+
+@font-face {
+    font-family: "Audi-WideBold";
+    src: url("../fonts/AudiType-WideBold.woff2");
+}
+
+@font-face {
+    font-family: "Audi-WideNormal";
+    src: url("../fonts/AudiType-WideNormal.woff2");
+}
+
+
+
+body{
+    font-family: "Audi-WideNormal", sans-serif;
+}

@@ -1,0 +1,100 @@
+:root {
+	--color1: rgb(190, 89, 19);
+	--color2: rgb(134, 120, 39);
+	--color3: rgb(94, 40, 11);
+	--color4: rgb(234, 234, 234);
+	--color1-op-40: rgba(190, 90, 19, 0.4);
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+}
+
+.card {
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 5px 20px black;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+}
+
+.card img {
+	width: 100%;
+	height: auto;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+}
+
+.card .btn {
+	position: absolute;
+	top: 20px;
+	width: 50px;
+	height: 50px;
+	font-size: 2rem;
+	cursor: pointer;
+	border: none;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
+
+.card .btn:hover {
+	box-shadow: 0 0 10px var(--color3);
+}
+
+.card .btn-favorite {
+	right: 20px;
+	background-color: var(--color2);
+	color: var(--color4);
+}
+
+.card .btn-share {
+	left: 20px;
+	background-color: var(--color1);
+}
+
+.card .card-body {
+	padding: 20px;
+}
+
+.card h3 {
+	font-size: 2rem;
+	margin: 0;
+	color: var(--color3);
+}
+
+.card p {
+	color: var(--color3);
+}
+
+.card .card-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	color: var(--color2);
+}
+
+.card .card-footer a {
+	text-decoration: none;
+	background-color: var(--color1-op-40);
+	color: var(--color1);
+	padding: 10px 15px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+}
+
+.card .card-footer a:hover {
+	color: var(--color3);
+}

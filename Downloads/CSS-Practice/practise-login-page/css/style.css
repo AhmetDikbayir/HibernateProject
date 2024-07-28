@@ -1,0 +1,136 @@
+:root {
+	--color1: #3cb8d9;
+	--color2: #5710b3;
+	--color3: #f6f6f6;
+	--color4: #e853fe;
+	--color5: #3b3b3b;
+	--color6: #d7d7d7;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--color2);
+    height: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.banner{
+    height: 50%;
+}
+
+.banner img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom center;
+}
+
+.login-form{
+    min-width: 350px;
+    background-color: var(--color3);
+    color: var(--color5);
+    box-shadow: 0 5px 15px var(--color5);
+    display: inline-block;
+    padding: 40px;
+    position: relative;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+
+.login-form .icon{
+    background-image: linear-gradient(90deg, var(--color2), var(--color4));
+    color: var(--color3);
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:0;
+    left:50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 1.7rem;
+    box-shadow: 0 -5px 10px var(--color5);
+    border:5px solid var(--color3);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -o-transform: translateY(-50%) translateX(-50%);
+}
+
+
+.login-form h2{
+    margin: 20px 0;
+    color: var(--color1);
+}
+
+.login-form input:not([type="checkbox"]){
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: var(--color6);
+    padding: 10px 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.login-form input:focus{
+    outline-color: var(--color4);
+}
+
+
+
+.login-form .form-group{
+    margin-bottom: 15px;
+    text-align: left ;
+}
+
+.login-form button{
+    display: block;
+    width: 100%;
+    border:none;
+    background-color: var(--color1);
+    color: var(--color3);
+    padding: 10px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.login-form .links{
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
